@@ -1,0 +1,3 @@
+[submodule "static"]
+	path = static
+	url = https://steam.codebasehq.com/amsterdam_rb/static.git

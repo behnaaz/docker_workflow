@@ -1,0 +1,7 @@
+static:
+  build: static
+  command: bundle exec middleman server --force-polling --verbose --latency=2 --port=4567
+  ports:
+    - "4567:4567"
+  volumes:
+    - ${PWD}/static:/home/app
