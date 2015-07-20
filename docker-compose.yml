@@ -5,3 +5,11 @@ static:
     - "4567:4567"
   volumes:
     - ${PWD}/static/middleman:/home/app
+
+api:
+  build: api
+  command: rackup -p 80
+  ports:
+    - "3000:80"
+  volumes:
+    - ${PWD}/api:/home/app
