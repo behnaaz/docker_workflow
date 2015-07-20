@@ -7,6 +7,16 @@ static:
     - "3002:80"
   volumes:
     - ${PWD}/static/middleman:/home/app
+
+test:
+  build: static
+  command: guard -p
+  links: 
+    - mongo
+  volumes:
+    - ${PWD}/api:/home/app/api
+    - ${PWD}/static/middleman:/home/app
+
 api:
   build: api
   command: rackup -p 80
@@ -16,6 +26,7 @@ api:
     - "3000:80"
   volumes:
     - ${PWD}/api:/home/app
+
 cms:
   build: cms
   command:  bundle exec rackup -p 80 -o 0.0.0.0
@@ -27,6 +38,7 @@ cms:
     - mongo
   volumes:
     - ${PWD}/cms:/home/app
+
 mongo:
   image: mongo
   ports:

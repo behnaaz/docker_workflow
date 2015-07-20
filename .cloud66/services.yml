@@ -1,0 +1,29 @@
+---
+services:
+  api:
+    git: git@codebasehq.com:steam/amsterdam_rb/api.git
+    git_branch: develop
+    command: nginx
+    traffic_matches:
+    - amsterdamrb_api.100graden.nl
+    ports:
+    - 80:80:443
+  cms:
+    git: git@codebasehq.com:steam/amsterdam_rb/cms.git
+    git_branch: develop
+    command: nginx
+    traffic_matches:
+    - amsterdamrb_cms.100graden.nl
+    ports:
+    - 80:80:443
+  static:
+    git: git@codebasehq.com:steam/amsterdam_rb/static.git
+    git_branch: develop
+    command: nginx
+    traffic_matches:
+    - amsterdamrb.100graden.nl
+    ports:
+    - 80:80:443
+
+databases:
+- mongodb
