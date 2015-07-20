@@ -1,0 +1,11 @@
+guard :rspec, cmd: "bundle exec rspec api/spec ", all_on_start: true do
+  watch(%r{^api/app/apis/(.+)\.rb$}) { |m| "api/spec/api/#{m[1]}_spec.rb" }
+  watch(%r{^api/app/models/(.+)\.rb$}) { |m| "api/spec/api/#{m[1]}s_spec.rb" }
+  watch(%r{^api/app/entities/(.+)\.rb$}) { |m| "api/spec/api/#{m[1]}s_spec.rb" }
+end
+
+guard :cucumber,  cmd: "bundle exec cucumber", all_on_start: true, cli: 'RACK_ENV=test --format pretty'  do
+  watch(%r{^features/.+\.feature$})
+  watch(%r{^features/support/.+$})                      { 'features' }
+  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
+end

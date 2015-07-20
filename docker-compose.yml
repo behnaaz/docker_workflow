@@ -9,13 +9,21 @@ static:
     - ${PWD}/static/middleman:/home/app
 
 test:
-  build: static
+  build: test
   command: guard -p
   links: 
     - mongo
   volumes:
+    - ${PWD}/test/Gemfile:/home/app/Gemfile
+    - ${PWD}/test/Gemfile.lock:/home/app/Gemfile.lock
+    - ${PWD}/test/Guardfile:/home/app/Guardfile
+    - ${PWD}/static/middleman/source:/home/app/source
     - ${PWD}/api:/home/app/api
-    - ${PWD}/static/middleman:/home/app
+    - ${PWD}/test/middleman/config:/home/app/config
+    - ${PWD}/test/middleman/features:/home/app/features
+    - ${PWD}/test/middleman/lib:/home/app/lib
+    - ${PWD}/test/middleman/config.rb:/home/app/config.rb
+    - ${PWD}/test/.rspec:/home/app/.rspec
 
 api:
   build: api
