@@ -4,4 +4,4 @@ static:
   ports:
     - "4567:4567"
   volumes:
-    - ${PWD}/static:/home/app
+    - ${PWD}/static/middleman:/home/app
