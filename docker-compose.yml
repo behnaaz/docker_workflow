@@ -9,7 +9,15 @@ static:
 api:
   build: api
   command: rackup -p 80
+  links:
+    - mongo
   ports:
     - "3000:80"
   volumes:
     - ${PWD}/api:/home/app
+
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
+  command: mongod --smallfiles
