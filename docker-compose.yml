@@ -1,11 +1,12 @@
 static:
   build: static
-  command: bundle exec middleman server --force-polling --verbose --latency=2 --port=4567
+  command: bundle exec middleman server --force-polling --verbose --latency=2 --port=80
+  links: 
+    - api
   ports:
-    - "4567:4567"
+    - "3002:80"
   volumes:
     - ${PWD}/static/middleman:/home/app
-
 api:
   build: api
   command: rackup -p 80
@@ -15,7 +16,17 @@ api:
     - "3000:80"
   volumes:
     - ${PWD}/api:/home/app
-
+cms:
+  build: cms
+  command:  bundle exec rackup -p 80 -o 0.0.0.0
+  environment:
+    - SECRET_KEY_BASE=as2387sd2370sd210128sd8023
+  ports:
+    - "3001:80"
+  links:
+    - mongo
+  volumes:
+    - ${PWD}/cms:/home/app
 mongo:
   image: mongo
   ports:
