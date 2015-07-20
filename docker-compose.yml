@@ -8,6 +8,7 @@ static:
   volumes:
     - ${PWD}/static/middleman:/home/app
 
+
 test:
   build: test
   command: guard -p
