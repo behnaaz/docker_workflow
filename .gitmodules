@@ -1,3 +1,6 @@
 [submodule "static"]
 	path = static
 	url = https://steam.codebasehq.com/amsterdam_rb/static.git
+[submodule "api"]
+	path = api
+	url = https://steam.codebasehq.com/amsterdam_rb/api.git
