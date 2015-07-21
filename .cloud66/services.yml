@@ -1,27 +1,27 @@
 ---
 services:
   api:
-    git: git@codebasehq.com:steam/amsterdam_rb/api.git
+    git: git@github.com:steamnl/docker_workflow_api.git
     git_branch: develop
     command: nginx
     traffic_matches:
-    - api_amsterdamrb.steamlab.nl
+    - api.foobar.com
     ports:
     - 80:80:443
   cms:
-    git: git@codebasehq.com:steam/amsterdam_rb/cms.git
+    git: git@github.com:steamnl/docker_workflow_cms.git
     git_branch: develop
     command: bundle exec rackup -p 80
     traffic_matches:
-    - cms_amsterdamrb.steamlab.nl
+    - cms.foobar.com
     ports:
     - 80:80:443
   static:
-    git: git@codebasehq.com:steam/amsterdam_rb/static.git
+    git: git@github.com:steamnl/docker_workflow_static.git
     git_branch: develop
     command: nginx
     traffic_matches:
-    - amsterdamrb.steamlab.nl
+    - www.foobar.com
     ports:
     - 80:80:443
 databases:
