@@ -1,1 +1,1 @@
-example how to use docker with middleman, rails, grape. using cloud66 to deploy
+An example how to use middleman, rails, rspec, cucumber, docker-compose & grape with docker. 
