@@ -7,8 +7,8 @@ static:
     - "3002:80"
   volumes:
     - ${PWD}/static/middleman:/home/app
-
-
+    - ${PWD}/static/config/config.js.coffee:/home/app/source/js/app/config/config.js.coffee
+ 
 test:
   build: test
   command: guard -p
@@ -20,11 +20,17 @@ test:
     - ${PWD}/test/Guardfile:/home/app/Guardfile
     - ${PWD}/static/middleman/source:/home/app/source
     - ${PWD}/api:/home/app/api
-    - ${PWD}/test/middleman/config:/home/app/config
-    - ${PWD}/test/middleman/features:/home/app/features
-    - ${PWD}/test/middleman/lib:/home/app/lib
-    - ${PWD}/test/middleman/config.rb:/home/app/config.rb
+    - ${PWD}/test/static/config/mongoid.yml:/home/app/config/mongoid.yml
+    - ${PWD}/test/static/config/config.js.coffee:/home/app/source/js/app/config/config.js.coffee
+    - ${PWD}/test/static/features:/home/app/features
+    - ${PWD}/test/static/lib:/home/app/lib
+    - ${PWD}/test/static/config.rb:/home/app/config.rb
     - ${PWD}/test/.rspec:/home/app/.rspec
+    - ${PWD}/test/coverage:/home/app/coverage
+    - ${PWD}/test/screenshots:/home/app/screenshots
+  ports:
+    - "4567:4567"
+
 
 api:
   build: api
