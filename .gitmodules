@@ -1,0 +1,9 @@
+[submodule "static"]
+	path = static
+  url=https://github.com/steamnl/docker_workflow_static.git
+[submodule "api"]
+	path = api
+	url = https://github.com/steamnl/docker_workflow_api.git
+[submodule "cms"]
+	path = cms
+	url = https://github.com/steamnl/docker_workflow_cms.git

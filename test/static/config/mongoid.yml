@@ -1,0 +1,24 @@
+development:
+  sessions:
+    default:
+      database: example_development
+      hosts:
+        - "mongo:27017"
+  options:
+    raise_not_found_error: false
+test:
+  sessions:
+    default:
+      database: example_test
+      hosts:
+        - "mongo:27017"
+  options:
+    raise_not_found_error: false
+production:
+  sessions:
+    default:
+      database: example_production
+      hosts:
+        - <%= "#{ENV['MONGODB_ADDRESS_INT']}:27017" %>
+  options:
+    raise_not_found_error: false

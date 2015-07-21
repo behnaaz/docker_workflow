@@ -1,0 +1,28 @@
+---
+services:
+  api:
+    git: git@github.com:steamnl/docker_workflow_api.git
+    git_branch: develop
+    command: nginx
+    traffic_matches:
+    - api.foobar.com
+    ports:
+    - 80:80:443
+  cms:
+    git: git@github.com:steamnl/docker_workflow_cms.git
+    git_branch: develop
+    command: bundle exec rackup -p 80
+    traffic_matches:
+    - cms.foobar.com
+    ports:
+    - 80:80:443
+  static:
+    git: git@github.com:steamnl/docker_workflow_static.git
+    git_branch: develop
+    command: nginx
+    traffic_matches:
+    - www.foobar.com
+    ports:
+    - 80:80:443
+databases:
+- mongodb

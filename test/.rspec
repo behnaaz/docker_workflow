@@ -1,0 +1,3 @@
+--color
+--format progress
+--require ./api/spec/spec_helper

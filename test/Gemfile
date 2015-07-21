@@ -1,0 +1,41 @@
+source 'http://rubygems.org'
+
+gem 'rake'
+gem "middleman", "~>3.3.6"
+gem "slim", "~> 2.0.0"
+gem "bootstrap-sass", :require => false
+
+
+gem "grape"
+gem 'roar'
+gem 'grape-roar'
+gem 'rack-cors'
+gem 'rack-contrib'
+gem 'grape-entity'
+gem 'sanitize'
+gem 'dalli'
+gem 'oj'
+
+
+gem 'guard'
+gem 'guard-rspec', require: false
+gem 'guard-cucumber', require: false
+
+
+group :test do
+  gem "mongoid", "~> 4.0.0"
+  gem "faker"
+  gem "capybara"
+  gem "ci_reporter"
+  gem 'simplecov'
+  gem "rspec"
+  gem "cucumber"
+  gem "poltergeist"
+  gem "selenium-webdriver"
+  gem 'factory_girl'
+  gem 'database_cleaner'
+
+  #stuff needed for API (ugly)
+
+
+end
