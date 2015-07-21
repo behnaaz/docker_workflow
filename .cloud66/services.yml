@@ -11,7 +11,7 @@ services:
   cms:
     git: git@codebasehq.com:steam/amsterdam_rb/cms.git
     git_branch: develop
-    command: nginx
+    command: bundle exec rackup -p 80
     traffic_matches:
     - cms_amsterdamrb.steamlab.nl
     ports:
