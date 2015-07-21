@@ -3,6 +3,7 @@ static:
   command: bundle exec middleman server --force-polling --verbose --latency=2 --port=80
   links: 
     - api
+    - cms
   ports:
     - "3002:80"
   volumes:
