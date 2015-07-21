@@ -5,7 +5,7 @@ services:
     git_branch: develop
     command: nginx
     traffic_matches:
-    - api.amsterdamrb.steamlab.nl
+    - api_amsterdamrb.steamlab.nl
     ports:
     - 80:80:443
   cms:
@@ -13,7 +13,7 @@ services:
     git_branch: develop
     command: nginx
     traffic_matches:
-    - cms.amsterdamrb.steamlab.nl
+    - cms_amsterdamrb.steamlab.nl
     ports:
     - 80:80:443
   static:
@@ -21,7 +21,7 @@ services:
     git_branch: develop
     command: nginx
     traffic_matches:
-    - www.amsterdamrb.steamlab.nl
+    - amsterdamrb.steamlab.nl
     ports:
     - 80:80:443
 databases:
