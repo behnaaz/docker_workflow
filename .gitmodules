@@ -3,7 +3,7 @@
 	url = https://steam.codebasehq.com/amsterdam_rb/static.git
 [submodule "api"]
 	path = api
-	url = https://steam.codebasehq.com/amsterdam_rb/api.git
+	url = https://github.com/steamnl/docker_workflow_api.git
 [submodule "cms"]
 	path = cms
 	url = https://steam.codebasehq.com/amsterdam_rb/cms.git
